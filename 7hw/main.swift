@@ -22,7 +22,7 @@ func autorization(){
         else if r1 == key && r2 != values{
             print("Неправильный пароль")
             break
-        }else if values < password{
+        }else if String(r2).count < password{
             print("Пароль должен состоять не менее чем из 6 цифр")
             break
         }else if r1 != key && r2 != values{
