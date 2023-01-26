@@ -1,11 +1,34 @@
-//
-//  main.swift
-//  7hw
-//
-//  Created by Pontophone on 1/21/23.
-//
-
 import Foundation
 
-print("Hello, World!")
+//Создать словарь из ключа имя пользователя и значения пароль, заполнить данными. Создать функцию авторизация, в котором 2 ридлайна для ввода информации. Сделать так чтобы при правильном вводе информации выводить "вы успешно вошли". Если имя пользователя нет в словаре, то "вы успешно зарегистрировались",  учитывайте что пароль должен быть не менее 6 символов. Если имя пользователя есть, но неправильно вводится пароль, то "неправильный пароль"
 
+var users = ["aman": 111111, "alisa": 222222, "elina": 333333, "amina": 444444, "yana": 555555]
+
+var password = 6
+
+//var name: String? = users.keys
+
+func autorization(){
+    print("Введите имя пользователя:")
+    let r1 = readLine()!
+    print("Введите пароль:")
+    let r2 = Int(readLine()!)!
+    
+    for (key, values) in users{
+        if r1 == key && r2 == values{
+            print("Вы успешно вошли")
+            break
+        }
+        else if r1 == key && r2 != values{
+            print("Неправильный пароль")
+            break
+        }else if values < password{
+            print("Пароль должен состоять не менее чем из 6 цифр")
+            break
+        }else if r1 != key && r2 != values{
+            print("Вы успешно зарегистрировались")
+            break
+        }
+    }
+}
+autorization()
